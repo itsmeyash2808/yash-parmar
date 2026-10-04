@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gujarat Travel Guide 2026</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, "Noto Sans Gujarati", sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+    color:#222;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(135deg,#ff6b00,#e63900);
+    color:white;
+    padding:45px 20px;
+    text-align:center;
+}
+
+header h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:18px;
+}
+
+/* NAVBAR */
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#111;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    padding:12px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:9px 15px;
+    border-radius:20px;
+    transition:.3s;
+}
+
+nav a:hover{
+    background:#ff6b00;
+}
+
+/* SEARCH */
+.search-box{
+    padding:30px 20px;
+    text-align:center;
+}
+
+.search-box input{
+    width:90%;
+    max-width:650px;
+    padding:15px 20px;
+    border:2px solid #ff6b00;
+    border-radius:30px;
+    font-size:16px;
+    outline:none;
+}
+
+/* CONTAINER */
+.container{
+    width:92%;
+    max-width:1250px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin:40px 0 25px;
+}
+
+.section-title h2{
+    color:#e65100;
+    font-size:30px;
+}
+
+.section-title p{
+    margin-top:8px;
+    color:#666;
+}
+
+/* ZONE */
+.zone{
+    margin:35px 0;
+}
+
+.zone-title{
+    background:#222;
+    color:white;
+    padding:15px 20px;
+    border-radius:12px;
+    margin-bottom:20px;
+    font-size:23px;
+}
+
+/* CARDS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:22px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    transition:.3s;
+    border-top:5px solid #ff6b00;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.card h3{
+    color:#e65100;
+    margin-bottom:12px;
+    font-size:22px;
+}
+
+.card ul{
+    padding-left:20px;
+}
+
+.card li{
+    margin:8px 0;
+    line-height:1.5;
+}
+
+.tag{
+    display:inline-block;
+    background:#fff0e6;
+    color:#e65100;
+    padding:5px 9px;
+    border-radius:15px;
+    font-size:13px;
+    margin:3px;
+}
+
+/* SEASON */
+.seasons{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+    margin-bottom:50px;
+}
+
+.season{
+    padding:25px;
+    border-radius:15px;
+    color:white;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.winter{
+    background:linear-gradient(135deg,#1976d2,#00acc1);
+}
+
+.monsoon{
+    background:linear-gradient(135deg,#087f23,#43a047);
+}
+
+.summer{
+    background:linear-gradient(135deg,#ef6c00,#f9a825);
+}
+
+.season h3{
+    margin-bottom:12px;
+    font-size:23px;
+}
+
+.season li{
+    margin:8px 0;
+    line-height:1.5;
+}
+
+/* BOOKING */
+.booking{
+    background:white;
+    margin:20px 0;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+.booking h3{
+    color:#e65100;
+    margin-bottom:15px;
+}
+
+.booking p{
+    line-height:1.7;
+    margin:8px 0;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:12px;
+    background:#ff6b00;
+    color:white;
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:25px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#d84315;
+}
+
+/* QUICK GUIDE */
+.quick{
+    background:linear-gradient(135deg,#ff6b00,#e53935);
+    color:white;
+    padding:40px 20px;
+    margin-top:50px;
+}
+
+.quick h2{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.quick-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.quick-item{
+    background:rgba(255,255,255,.15);
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    backdrop-filter:blur(5px);
+}
+
+/* FOOTER */
+footer{
+    background:#111;
+    color:#aaa;
+    text-align:center;
+    padding:30px 15px;
+}
+
+footer strong{
+    color:white;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+    header h1{
+        font-size:30px;
+    }
+
+    header p{
+        font-size:15px;
+    }
+
+    .zone-title{
+        font-size:19px;
+    }
+
+    .card{
+        padding:18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌴 GUJRAT TRAVELWITH YASH PARMAR </h1>
+    <p>ગુજરાતના 33 जिलાઓ • પ્રવાસન સ્થળો • બુકિંગ • શ્રેષ્ઠ સમય</p>
+</header>
+
+<nav>
+    <a href="#districts">જિલ્લાઓ</a>
+    <a href="#season">શ્રેષ્ઠ સમય</a>
+    <a href="#booking">બુકિંગ</a>
+    <a href="#quick">Quick Guide</a>
+</nav>
+
+<div class="search-box">
+    <input type="text" id="search"
+    placeholder="🔎 જિલ્લો અથવા પ્રવાસન સ્થળ શોધો...">
+</div>
+
+<div class="container">
+
+<section id="districts">
+
+<div class="section-title">
+    <h2>🗺️ ગુજરાતના મુખ્ય પ્રવાસન સ્થળો</h2>
+    <p>ઝોન પ્રમાણે પ્રવાસન સ્થળોની સંપૂર્ણ માહિતી</p>
+</div>
+
+
+<!-- KUTCH -->
+<div class="zone">
+<div class="zone-title">🏜️ 1. કચ્છ ઝોન</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>કચ્છ</h3>
+<span class="tag">રણ ઉત્સવ</span>
+<span class="tag">UNESCO</span>
+
+<ul>
+<li>સફેદ રણ – ધોર્ડો</li>
+<li>રણ ઉત્સવ</li>
+<li>ધોળાવીરા</li>
+<li>માંડવી બીચ</li>
+<li>વિજય વિલાસ પેલેસ</li>
+<li>કાળો ડુંગર</li>
+<li>આયના મહેલ</li>
+<li>સ્મૃતિવન અર્થક્વેક મેમોરિયલ</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+
+<!-- SAURASHTRA -->
+<div class="zone">
+<div class="zone-title">🌊 2. સૌરાષ્ટ્ર ઝોન</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>ગીર સોમનાથ</h3>
+<ul>
+<li>સોમનાથ મંદિર</li>
+<li>ગીર નેશનલ પાર્ક</li>
+<li>ભાલકા તીર્થ</li>
+<li>અહલ્યાબાઈ મંદિર</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>દેવભૂમિ દ્વારકા</h3>
+<ul>
+<li>દ્વારકાધીશ મંદિર</li>
+<li>બેટ દ્વારકા</li>
+<li>ગોમતી ઘાટ</li>
+<li>શિવરાજપુર બીચ</li>
+<li>રૂક્મિણી મંદિર</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>જૂનાગઢ</h3>
+<ul>
+<li>ગિરનાર પર્વત</li>
+<li>ગિરનાર રોપ-વે</li>
+<li>ઉપરકોટ કિલ્લો</li>
+<li>સક્કરબાગ ઝૂ</li>
+<li>દામોદર કુંડ</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>જામનગર</h3>
+<ul>
+<li>લખોટા તળાવ</li>
+<li>ખીજડિયા પક્ષી અભયારણ્ય</li>
+<li>બાલા હનુમાન મંદિર</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>રાજકોટ</h3>
+<ul>
+<li>વોટસન મ્યુઝિયમ</li>
+<li>આજી ડેમ</li>
+<li>ઈશ્વરია પાર્ક</li>
+<li>કબા ગાંધીનો ડેલો</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>ભાવનગર</h3>
+<ul>
+<li>પાલીતાણા</li>
+<li>શેત્રુંજય પર્વત</li>
+<li>વેળાવદર બ્લેકબક નેશનલ પાર્ક</li>
+<li>નિષ્કલંક મહાદેવ</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>મોરબી</h3>
+<ul>
+<li>મણીમંદિર</li>
+<li>ઝૂલતો પુલ</li>
+<li>ગ્રીન ચોક</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>પોરબંદર</h3>
+<ul>
+<li>કીર્તિ મંદિર</li>
+<li>સુદામા મંદિર</li>
+<li>માધવપુર ઘેડ બીચ</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>અમરેલી</h3>
+<ul>
+<li>ધારી ખોડિયાર મંદિર</li>
+<li>ગીર પૂર્વ વિસ્તાર</li>
+<li>પીપાવાવ</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>બોટાદ</h3>
+<ul>
+<li>સાળંગપુર હનુમાનજી મંદિર</li>
+<li>ગઢડા સ્વામિનારાયણ મંદિર</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+
+<!-- NORTH GUJARAT -->
+<div class="zone">
+<div class="zone-title">⛰️ 3. ઉત્તર ગુજરાત ઝોન</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>પાટણ</h3>
+<ul>
+<li>રાણી કી વાવ</li>
+<li>પટોળા હાઉસ</li>
+<li>સહસ્ત્રલિંગ તળાવ</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>મહેસાણા</h3>
+<ul>
+<li>મોઢેરા સૂર્ય મંદિર</li>
+<li>બહુચરાજી મંદિર</li>
+<li>ઊંઝા ઉમિયા માતાજી મંદિર</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>બનાસકાંઠા</h3>
+<ul>
+<li>અંબાજી શક્તિપીઠ</li>
+<li>ગબ્બર પર્વત</li>
+<li>બાલારામ અંબિકા વાઇલ્ડલાઇફ સેન્ચુરી</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>સાબરકાંઠા</h3>
+<ul>
+<li>ઇડરનો ગઢ</li>
+<li>પોળો ફોરેસ્ટ</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>અરવલ્લી</h3>
+<ul>
+<li>શામળાજી મંદિર</li>
+<li>મેશવો જળાશય</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+
+<!-- CENTRAL GUJARAT -->
+<div class="zone">
+<div class="zone-title">🏛️ 4. મધ્ય ગુજરાત ઝોન</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>અમદાવાદ</h3>
+<ul>
+<li>સાબરમતી આશ્રમ</li>
+<li>કાંકરિયા તળાવ</li>
+<li>સાયન્સ સિટી</li>
+<li>સિદી સૈયદની જાળી</li>
+<li>અડાલજની વાવ</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>ગાંધીનગર</h3>
+<ul>
+<li>અક્ષરધામ મંદિર</li>
+<li>સરિતા ઉદ્યાન</li>
+<li>ઇન્દ્રોડા નેચર પાર્ક</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>વડોદરા</h3>
+<ul>
+<li>લક્ષ્મી વિલાસ પેલેસ</li>
+<li>સાયાજી બાગ</li>
+<li>EME મંદિર</li>
+<li>કમાટીબાગ મ્યુઝિયમ</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>નર્મદા</h3>
+<ul>
+<li>સ્ટેચ્યુ ઓફ યુનિટી</li>
+<li>સરદાર સરોવર ડેમ</li>
+<li>ઝરવાણી વોટરફોલ</li>
+<li>જંગલ સફારી</li>
+<li>ગ્લો ગાર્ડન</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>પંચમહાલ</h3>
+<ul>
+<li>ચાંપાનેર-પાવાગઢ</li>
+<li>મહાકાળી માતાજી મંદિર</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>આણંદ</h3>
+<ul>
+<li>અમૂલ ડેરી મ્યુઝિયમ</li>
+<li>ખંભાત</li>
+<li>ડાકોર નજીકના ધાર્મિક સ્થળો</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>ખેડા</h3>
+<ul>
+<li>ડાકોર રણછોડરાયજી મંદિર</li>
+<li>વડતાલ સ્વામિનારાયણ મંદિર</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>છોટા ઉદેપુર</h3>
+<ul>
+<li>આદિવાસી સંસ્કૃતિ મ્યુઝિયમ</li>
+<li>સુખદેવ વોટરફોલ</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>મહીસાગર</h3>
+<ul>
+<li>રૈયૌલી ડિનોસોર પાર્ક</li>
+<li>કલેશ્વરી હેરિટેજ સાઇટ</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>દાહોદ</h3>
+<ul>
+<li>રતનમહાલ રીંછ અભયારણ્ય</li>
+<li>કેદારનાથ મહાદેવ</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+
+<!-- SOUTH GUJARAT -->
+<div class="zone">
+<div class="zone-title">🌴 5. દક્ષિણ ગુજરાત ઝોન</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>સુરત</h3>
+<ul>
+<li>ડુમસ બીચ</li>
+<li>ડચ ગાર્ડન</li>
+<li>ગોપી તળાવ</li>
+<li>સરથાણા નેચર પાર્ક</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>ડાંગ</h3>
+<ul>
+<li>સાપુતારા હિલ સ્ટેશન</li>
+<li>ગિરા ધોધ</li>
+<li>વઘઈ બોટાનિકલ ગાર્ડન</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>વલસાડ</h3>
+<ul>
+<li>તિથલ બીચ</li>
+<li>પારનેરા ડુંગર</li>
+<li>સાયન્સ સેન્ટર</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>નવસારી</h3>
+<ul>
+<li>દાંડી મેમોરિયલ</li>
+<li>ઉંભરાટ બીચ</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>તાપી</h3>
+<ul>
+<li>ઉકાઈ ડેમ</li>
+<li>પંચવટી બાગ</li>
+<li>સોનગઢ કિલ્લો</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>ભરૂચ</h3>
+<ul>
+<li>કબીરવડ</li>
+<li>ભૃગુ ઋષિ મંદિર</li>
+<li>ગોલ્ડન બ્રિજ</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+</section>
+
+
+<!-- SEASON -->
+<section id="season">
+
+<div class="section-title">
+<h2>🌤️ ગુજરાત ફરવાનો શ્રેષ્ઠ સમય</h2>
+<p>ઋતુ પ્રમાણે પ્રવાસનું આયોજન કરો</p>
+</div>
+
+<div class="seasons">
+
+<div class="season winter">
+<h3>❄️ શિયાળો — ઓક્ટોબરથી માર્ચ</h3>
+<ul>
+<li>કચ્છનું સફેદ રણ</li>
+<li>રણ ઉત્સવ</li>
+<li>સોમનાથ અને દ્વારકા</li>
+<li>ગિરનાર</li>
+<li>પાલીતાણા</li>
+<li>સ્ટેચ્યુ ઓફ યુનિટી</li>
+</ul>
+</div>
+
+<div class="season monsoon">
+<h3>🌧️ ચોમાસું — જુલાઈથી સપ્ટેમ્બર</h3>
+<ul>
+<li>સાપુતારા</li>
+<li>ડાંગ</li>
+<li>ગિરા ધોધ</li>
+<li>પોળો ફોરેસ્ટ</li>
+<li>ઝરવાણી વોટરફોલ</li>
+<li>કબીરવડ</li>
+</ul>
+</div>
+
+<div class="season summer">
+<h3>☀️ ઉનાળો — એપ્રિલથી જૂન</h3>
+<ul>
+<li>ગીર વિસ્તાર</li>
+<li>શિવરાજપુર બીચ</li>
+<li>માંડવી બીચ</li>
+<li>તિથલ બીચ</li>
+<li>સાંજના સમયે બીચ પ્રવાસ</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+
+<!-- BOOKING -->
+<section id="booking">
+
+<div class="section-title">
+<h2>🎫 મુખ્ય સ્થળોનું બુકિંગ</h2>
+<p>મુસાફરી પહેલાં અધિકૃત વેબસાઇટ પર માહિતી તપાસો</p>
+</div>
+
+<div class="booking">
+<h3>🏜️ કચ્છ — સફેદ રણ / રણ ઉત્સવ</h3>
+<p><b>મુખ્ય સ્થળો:</b> સફેદ રણ, કાળો ડુંગર, ધોળાવીરા, માંડવી, વિજય વિલાસ પેલેસ.</p>
+<p><b>બુકિંગ:</b> રણ ઉત્સવ માટે Tent City પેકેજ અને સફેદ રણ માટે જરૂરી પરમિટની માહિતી અધિકૃત ગુજરાત ટુરિઝમ પોર્ટલ પરથી તપાસો.</p>
+<a class="btn" href="https://www.gujarattourism.com/" target="_blank">
+ગુજરાત ટુરિઝમ
+</a>
+</div>
+
+<div class="booking">
+<h3>🗿 નર્મદા — Statue of Unity</h3>
+<p><b>મુખ્ય સ્થળો:</b> સ્ટેચ્યુ ઓફ યુનિટી, સરદાર સરોવર ડેમ, ગ્લો ગાર્ડન, જંગલ સફારી.</p>
+<p><b>બુકિંગ:</b> મુલાકાત પહેલાં અધિકૃત SOU Ticket Portal પર ઉપલબ્ધ ટિકિટ અને સમય તપાસો.</p>
+<a class="btn" href="https://soutickets.in/" target="_blank">
+SOU Ticket Booking
+</a>
+</div>
+
+<div class="booking">
+<h3>🦁 ગીર — Wildlife Safari</h3>
+<p><b>મુખ્ય સ્થળો:</b> સાસણ ગીર, ગીર સફારી, દેવળિયા Interpretation Zone.</p>
+<p><b>બુકિંગ:</b> સફારી માટે અધિકૃત Gir Forest portal પર ઉપલબ્ધ તારીખ અને પરમિટ તપાસો.</p>
+<a class="btn" href="https://girlion.gujarat.gov.in/" target="_blank">
+Gir Safari
+</a>
+</div>
+
+<div class="booking">
+<h3>⛰️ જૂનાગઢ — Girnar Ropeway</h3>
+<p><b>મુખ્ય સ્થળો:</b> ગિરનાર, અંબાજી મંદિર, દત્તાત્રેય તોક, ઉપરકોટ કિલ્લો.</p>
+<p><b>બુકિંગ:</b> Ropewayની ઉપલબ્ધતા અને ટિકિટ માટે અધિકૃત સેવા તપાસો.</p>
+<a class="btn" href="https://udankhatola.com/" target="_blank">
+Ropeway Booking
+</a>
+</div>
+
+</section>
+
+</div>
+
+
+<!-- QUICK GUIDE -->
+<section id="quick" class="quick">
+
+<h2>🚗 Gujarat Quick Travel Guide</h2>
+
+<div class="quick-grid">
+
+<div class="quick-item">
+<h3>🏜️ કચ્છ</h3>
+<p>White Rann + Dholavira</p>
+</div>
+
+<div class="quick-item">
+<h3>🦁 ગીર</h3>
+<p>Lion Safari + Somnath</p>
+</div>
+
+<div class="quick-item">
+<h3>🛕 દ્વારકા</h3>
+<p>Dwarkadhish + Shivrajpur</p>
+</div>
+
+<div class="quick-item">
+<h3>⛰️ જૂનાગઢ</h3>
+<p>Girnar + Ropeway</p>
+</div>
+
+<div class="quick-item">
+<h3>🗿 કેવડિયા</h3>
+<p>Statue of Unity</p>
+</div>
+
+<div class="quick-item">
+<h3>🌧️ ડાંગ</h3>
+<p>Saputara + Waterfalls</p>
+</div>
+
+<div class="quick-item">
+<h3>🏛️ અમદાવાદ</h3>
+<p>Heritage + Sabarmati Ashram</p>
+</div>
+
+<div class="quick-item">
+<h3>🌊 સુરત</h3>
+<p>Dumas Beach + Nature Park</p>
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+<p>© 2026 <strong>Gujarat Travel Guide</strong></p>
+<p>ગુજરાતના પ્રવાસન સ્થળોની ��ાહિતી માટે બનાવેલી Travel Website</p>
+</footer>
+
+
+<script>
+
+/* SEARCH FUNCTION */
+
+const search = document.getElementById("search");
+const cards = document.querySelectorAll(".card");
+
+search.addEventListener("keyup", function(){
+
+    const value = search.value.toLowerCase();
+
+    cards.forEach(card => {
+
+        const text = card.innerText.toLowerCase();
+
+        if(text.includes(value)){
+            card.style.display = "block";
+        }else{
+            card.style.display = "none";
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
